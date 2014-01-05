@@ -18,5 +18,6 @@ func main() {
   server.Use(middleware.BodyParser)
   server.Listen(8080)
 }
+```
 
 [forgery]: https://github.com/ricallinson/forgery
