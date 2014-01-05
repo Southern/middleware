@@ -1,5 +1,8 @@
 # Middleware for [Forgery][forgery]
 
+## Known issues
+- BodyParser only parses strings at this time.
+
 ## API
 ### middleware.BodyParser
 Currently parses only JSON data.
