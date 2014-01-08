@@ -9,7 +9,7 @@ import (
 func BodyParser(req *stackr.Request, res *stackr.Response, next func()) {
   defer next()
   contentType := req.Header.Get("content-type")
-  if contentType == "application/json" {
+  if contentType[0:16] == "application/json" {
     req.Map = make(map[string]interface{})
     body, err := ioutil.ReadAll(req.Request.Body)
     if err != nil {
