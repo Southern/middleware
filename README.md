@@ -18,8 +18,10 @@ func main() {
   server := f.CreateServer()
   server.Use(middleware.BodyParser)
   server.Get("/", func (req *f.Request, res *f.Response, next func()) {
-    if len(req.Request.Map) > 0 {
-      fmt.Printf("Map: %+v\n", req.Request.Map)
+    // JSON object with string keys and string values
+    json := req.Map["json"].(map[string]string)
+    if len(json) > 0 {
+      fmt.Printf("JSON: %+v\n", json)
     }
   })
   server.Listen(8080)
